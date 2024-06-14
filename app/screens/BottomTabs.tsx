@@ -13,7 +13,7 @@ const BottomTabs = () => {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
+          let iconName: any;
 
           if (route.name === "Home") {
             iconName = focused ? "home" : "home-outline";
