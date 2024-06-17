@@ -7,15 +7,20 @@ import {
   TouchableHighlight,
 } from "react-native";
 import React from "react";
-import { NavigationProp } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator(); 
 
 interface RouterProps {
   navigation: NavigationProp<any, any>;
+
 }
 
-const Home = () => {
+const Home = ({ navigation }: RouterProps) => {
   const handleProfilePress = () => {
     console.log("Navigate to doctor's profile");
   };
@@ -47,11 +52,12 @@ const Home = () => {
           <TouchableHighlight
             style={styles.pressable}
             underlayColor="#ddd"
-            onPress={() => {}}
+            onPress={() => navigation.navigate('Booking')}
           >
             <FontAwesome5 name="briefcase-medical" size={24} color="black" />
           </TouchableHighlight>
           <Text style={styles.iconText}>Booking Kunjungan</Text>
+
         </View>
 
         <View style={styles.iconWrapper}>
