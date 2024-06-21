@@ -10,14 +10,13 @@ import React from "react";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const Stack = createStackNavigator(); 
+const Stack = createStackNavigator();
 
 interface RouterProps {
   navigation: NavigationProp<any, any>;
-
 }
 
 const Home = ({ navigation }: RouterProps) => {
@@ -52,19 +51,18 @@ const Home = ({ navigation }: RouterProps) => {
           <TouchableHighlight
             style={styles.pressable}
             underlayColor="#ddd"
-            onPress={() => navigation.navigate('Booking')}
+            onPress={() => navigation.navigate("Booking")}
           >
             <FontAwesome5 name="briefcase-medical" size={24} color="black" />
           </TouchableHighlight>
           <Text style={styles.iconText}>Booking Kunjungan</Text>
-
         </View>
 
         <View style={styles.iconWrapper}>
           <TouchableHighlight
             style={styles.pressable}
             underlayColor="#ddd"
-            onPress={() => {}}
+            onPress={() => navigation.navigate("DaftarBooking")}
           >
             <FontAwesome5 name="calendar-alt" size={24} color="black" />
           </TouchableHighlight>

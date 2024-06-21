@@ -2,6 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabs from "./BottomTabs";
 import Booking from "./Booking";
+import DaftarBooking from "./DaftarBooking";
 
 const InsideStack = createNativeStackNavigator();
 
@@ -16,6 +17,12 @@ function InsideLayout() {
       <InsideStack.Screen
         name="Booking"
         component={Booking}
+        options={{ headerShown: false }}
+      />
+
+      <InsideStack.Screen
+        name="DaftarBooking"
+        component={DaftarBooking}
         options={{ headerShown: false }}
       />
     </InsideStack.Navigator>
